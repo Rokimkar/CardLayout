@@ -8,6 +8,7 @@
 
 #import "CollectionLayout.h"
 
+
 @implementation CollectionLayout
 {
     NSIndexPath *mainIndexPath;
@@ -55,7 +56,7 @@
 
 -(void) applyTransformToLayoutAttributes:(UICollectionViewLayoutAttributes *)attribute{
     if(attribute.indexPath.row == mainIndexPath.row){
-        attribute.size = CGSizeMake(self.collectionView.bounds.size.width-40, self.collectionView.bounds.size.height-80);
+        attribute.size = CGSizeMake(self.collectionView.bounds.size.width-self.sliderValue, self.collectionView.bounds.size.height);
         attribute.zIndex=1024;
         
     }

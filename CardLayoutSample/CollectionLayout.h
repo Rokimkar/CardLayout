@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CollectionLayout : UICollectionViewFlowLayout
-
+@property (nonatomic) NSInteger sliderValue;
 @end

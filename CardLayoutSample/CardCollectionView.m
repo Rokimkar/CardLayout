@@ -20,7 +20,7 @@
 
 -(id)initWithFrame:(CGRect)frame data:(NSArray *)dataArray{
     [self setUpCollectionViewFlowLayout];
-    [self.layout setItemSize:CGSizeMake(frame.size.width-80, frame.size.height)];
+    [self.layout setItemSize:CGSizeMake(frame.size.width-80, frame.size.height-20)];
     self = [super initWithFrame:frame collectionViewLayout:self.layout];
     if(self){
         self.dataSource = self;
@@ -28,7 +28,7 @@
         self.dataArray = dataArray;
     }
     [self registerCellsForCollectionView];
-    [self setBackgroundColor:[UIColor whiteColor]];
+    [self setBackgroundColor:[UIColor greenColor]];
     return self;
 }
 
@@ -55,7 +55,7 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.row==0||indexPath.row==self.dataArray.count){
+    if(indexPath.row==0||indexPath.row==self.dataArray.count+1){
         BlankCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BlankCell" forIndexPath:indexPath];
         return cell;
     }
@@ -69,16 +69,12 @@
     if(indexPath.row==0){
         return CGSizeMake(40, self.frame.size.height);
     }
-    return CGSizeMake(self.frame.size.width-80, self.frame.size.height);
+    return CGSizeMake(self.frame.size.width-80, self.frame.size.height-20);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(0, 0, 0, 0);
 }
-
-
-
-
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
