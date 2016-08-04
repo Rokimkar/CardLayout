@@ -20,12 +20,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CardLayoutSample/CollectionLayout.m"
-            timestampString = "489572161.256108"
+            timestampString = "489918540.624215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "-layoutAttributesForElementsInRect:"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "-layoutAttributesForItemAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

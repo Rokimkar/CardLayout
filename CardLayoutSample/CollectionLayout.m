@@ -20,6 +20,10 @@
 
 -(UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath{
      UICollectionViewLayoutAttributes *attributes = [[super layoutAttributesForItemAtIndexPath:indexPath] copy];
+    CATransform3D theTransform = CATransform3DIdentity;
+    const CGFloat theScale = 1.05f;
+    theTransform = CATransform3DScale(theTransform, theScale, theScale, 1.0f);
+    attributes.transform3D=theTransform;
     return attributes;
 }
 
@@ -50,15 +54,13 @@
     {
         [self applyTransformToLayoutAttributes:attribute];
     }
-    
     return attributes;
 }
 
 -(void) applyTransformToLayoutAttributes:(UICollectionViewLayoutAttributes *)attribute{
     if(attribute.indexPath.row == mainIndexPath.row){
-        attribute.size = CGSizeMake(self.collectionView.bounds.size.width-self.sliderValue, self.collectionView.bounds.size.height);
-        attribute.zIndex=1024;
-        
+        attribute.size = CGSizeMake(self.collectionView.bounds.size.width-40, self.collectionView.bounds.size.height);
+        attribute.zIndex+=10;
     }
 }
 

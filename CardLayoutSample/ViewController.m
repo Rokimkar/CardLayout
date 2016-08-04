@@ -32,7 +32,7 @@
 }
 
 - (IBAction)slider:(id)sender {
-    [self.cardCollectionView setFrame:CGRectMake(0, 250-self.slider.value, self.view.frame.size.width, 170)];
+    [self.cardCollectionView setFrame:CGRectMake(0, 250-self.slider.value, self.view.frame.size.width, 170+self.slider.value)];
     [self.cardCollectionView.layout invalidateLayout];
     self.cardCollectionView.layout.sliderValue=self.slider.value;
 }
