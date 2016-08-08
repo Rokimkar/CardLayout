@@ -28,7 +28,7 @@
         self.dataArray = dataArray;
     }
     [self registerCellsForCollectionView];
-    [self setBackgroundColor:[UIColor greenColor]];
+    [self setBackgroundColor:[UIColor clearColor]];
     return self;
 }
 
